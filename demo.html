@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<style>
+    #shared_block_news {
+        position: relative;
+        height: 36px;
+        line-height: 36px;
+        background-color: rgba(51, 61, 71, .5);
+        overflow: hidden;
+        color: #fff;
+    }
+    #shared_block_news .news-list{
+        height:36px;
+    }
+        #shared_block_news .news-list > ul{
+            position:absolute;
+        }
+
+        #shared_block_news a {
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 100;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+            #shared_block_news a:hover {
+                color: #f3f3f3;
+            }
+
+        /* 上下切换 */
+        #shared_block_news div.text-right > a {
+            padding: 0 5px;
+        }
+
+            #shared_block_news div.text-right > a:hover {
+                background-color: rgba(255,255,255,.2)
+            }
+
+</style>
+<body>
+    <div id="shared_block_news" class="clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 news-list">
+                    <ul class="list-unstyled no-padding">
+                        <li class="intercept">
+                            <a class="news" role="button" target="_blank">
+                                <i class="lks-icon lks-icon_sound"></i>&nbsp;标题1标题1标题1标题1标题1标题1标题1标题1
+                            </a>
+                        </li>
+                        <li class="intercept">
+                            <a class="news" role="button" target="_blank">
+                                <i class="lks-icon lks-icon_sound"></i>&nbsp;标题2标题2标题2标题1标题1标题1标题1标题1
+                            </a>
+                        </li>
+                        <li class="intercept">
+                            <a class="news" role="button" target="_blank">
+                                <i class="lks-icon lks-icon_sound"></i>&nbsp;标题3标题3标题1标题1标题1标题1标题1标题1
+                            </a>
+                        </li>
+                        <li class="intercept">
+                            <a class="news" role="button" target="_blank">
+                                <i class="lks-icon lks-icon_sound"></i>&nbsp;标题4标题4标题4标题1标题1标题1标题1标题1
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 text-nowrap text-right">
+                    <a id="shared_news_up" class="glyphicon glyphicon-chevron-up" role="button">上</a>
+                    <a id="shared_news_down" class="glyphicon glyphicon-chevron-down" role="button">下</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tips">
+        tips:ul这个盒子需要绝对定位，ul的父盒子设置相对定位才可以通过改变top滚动。
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="updown.js"></script>
+
+    <script>
+     window.addEventListener('load', function () {
+        $("#shared_block_news .news-list").lksscroll({
+            speed: 500,//
+            time: 3000,
+            upBtn: "shared_news_up",
+            downBtn: "shared_news_down"
+        });
+    }, false);
+    </script>
+</body>
+</html>
